@@ -1,0 +1,36 @@
+/* HomePage.css */
+.home-container {
+  background-size: cover;
+  background-image: url('https://th.bing.com/th/id/OIP.h6h4KZ3Q5_YGSPhxizEsPAHaFe?w=263&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7%20found%20in%20google');
+  background-position: center;
+  min-height: 86vh;
+  min-width: 192vh;
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  align-items: center;
+  justify-content: center;
+  color: #ee9068;
+  text-align: center;
+}
+
+.home-links {
+  margin-top: 20px; /* Add some space above the links */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-links a {
+  text-decoration: none;
+  color: white;
+  background-color: #f98383;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home-links a:hover {
+  background-color: #555;
+}

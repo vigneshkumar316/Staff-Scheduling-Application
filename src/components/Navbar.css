@@ -1,0 +1,68 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  align-items: flex-start; /* Align items at the start */
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  position: relative; /* To position the sidebar within the navbar */
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  margin-left: 1100px; /* Space between the toggle button and the links */
+  
+}
+
+.navbar-links a {
+  color: rgb(109, 166, 247);
+  text-decoration: none;
+  margin-right:20px;
+}
+
+.sidebar-toggle {
+  background-color: #5967e4;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed; /* Fixed position to the left */
+  top: 50px; /* Adjust based on your navbar height */
+  left: 0;
+  background-color: #111;
+  width: 250px;
+  height: calc(100% - 50px); /* Full height minus the navbar height */
+  display: none;
+  transition: all 0.3s ease;
+  overflow-y: auto; /* Handle overflow */
+}
+
+.sidebar.open {
+  display: block;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
