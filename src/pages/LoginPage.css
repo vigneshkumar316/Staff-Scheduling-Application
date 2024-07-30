@@ -1,0 +1,74 @@
+/* Advanced styles for the login form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  min-width: 192vh;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* Gradient background */
+  
+}
+
+.login-box {
+  background: #eeecec; /* White background for the form */
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box input {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.login-box input:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none;
+}
+
+.login-box button {
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-box button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+}
