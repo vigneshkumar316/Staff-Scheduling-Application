@@ -21,14 +21,14 @@ const ManagerDashboard = ({ requests, onNotify }) => {
 
   return (
     <div className="dashboard-container">
-      <h2>Manager Dashboard - Pending Time-Off Requests</h2>
+      <h2>Manager Dashboard </h2>
       {notification && <div className="notification">{notification}</div>}
       <ul className="request-list">
         {requests.map((request, index) => (
           <li key={index} className="request-item">
             <div className="request-details">
               <p><strong>Employee:</strong> {request.employeeName || 'Unknown'}</p>
-              <p><strong>Dates:</strong> {request.startDate} - {request.endDate}</p>
+              <p><strong>Dates:</strong> {request.startDate} TO {request.endDate}</p>
               <p><strong>Reason:</strong> {request.reason}</p>
             </div>
             <div className="request-actions">

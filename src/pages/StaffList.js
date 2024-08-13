@@ -1,26 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import StaffForm from './StaffForm';
 import './StaffList.css';
 
-const initialStaff = [
-  { id: 1, name: 'John Doe', position: 'Manager', contact: '123-456-7890', email: 'john@example.com' }
-];
-
-function StaffList() {
-  const [staff, setStaff] = useState(initialStaff);
+const StaffList = () => {
+  const [staff, setStaff] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const addStaffMember = (newMember) => {
-    const isDuplicate = staff.some(member => member.email === newMember.email);
+  useEffect(() => {
+    const fetchStaff = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/staff');
+        console.log('Fetched staff data:', response.data); // Debugging line
+        setStaff(response.data);
+      } catch (error) {
+        console.error('Error fetching staff data:', error.response ? error.response.data : error.message);
+      }
+    };
+
+    fetchStaff();
+  }, []);
+
+  const addStaffMember = async (newMember) => {
+    const isValid = newMember.name && newMember.contactnumber && newMember.position && newMember.user_email;
+    if (!isValid) {
+      alert('Please fill all required fields.');
+      return;
+    }
+  
+    const isDuplicate = staff.some(member => member.user_email === newMember.user_email);
     if (isDuplicate) {
       alert('A staff member with the same email already exists.');
       return;
     }
-    setStaff([...staff, { ...newMember, id: staff.length + 1 }]);
+  
+    try {
+      const response = await axios.post('http://localhost:3001/staff', newMember);
+      console.log('Staff member added:', response.data); // Debugging line
+      setStaff(prevStaff => [...prevStaff, response.data]);
+    } catch (error) {
+      console.error('Error adding staff member:', error.response ? error.response.data : error.message);
+      if (error.response) {
+        console.error('Error response data:', error.response.data);
+      }
+    }
   };
 
-  const deleteStaffMember = (id) => {
-    setStaff(staff.filter(member => member.id !== id));
+  const deleteStaffMember = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/staff/${id}`);
+      setStaff(prevStaff => prevStaff.filter(member => member.id !== id));
+    } catch (error) {
+      console.error('Error deleting staff member:', error.response ? error.response.data : error.message);
+    }
   };
 
   const handleSearchChange = (e) => {
@@ -35,11 +67,18 @@ function StaffList() {
   return (
     <div className="staff-list">
       <center><h2>Employee Members</h2></center>
+      <input
+        type="text"
+        placeholder="Search by name or position"
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-input"
+      />
       <ul>
         {filteredStaff.map(member => (
           <li key={member.id} className="staff-item">
             <div>
-              <strong>{member.name}</strong> - {member.position} ({member.contact}, {member.email})
+              <strong>{member.name}</strong> - {member.position} ({member.contactnumber}, {member.user_email})
             </div>
             <div>
               <button className="edit-btn">Edit</button>

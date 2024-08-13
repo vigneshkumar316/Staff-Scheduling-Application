@@ -1,6 +1,6 @@
 /* Background for the outer container */
 .outer-container {
-  background: linear-gradient(to right, #f5f7fa, #f58484); /* Gradient background */
+  background: linear-gradient(to right, #e0eafc, #c3cfe2);
   min-height: 90vh; /* Full height to cover the viewport */
   display: flex;
   justify-content: center;
@@ -13,9 +13,9 @@
   width: 100%;
   padding: 20px;
   border-radius: 8px;
-   /* White background for the form */
+  /* White background for the form */
   box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
-  background: linear-gradient(to right, #f5f7fa, #f58484);
+  background: linear-gradient(to right, #f9f9fa, #f8f9fa); /* Gradient background */
   margin-top: 15px;
 }
 

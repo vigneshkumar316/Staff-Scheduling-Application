@@ -21,11 +21,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-header">
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
           {isSidebarOpen ? 'Close' : 'Staff_Details'}
-        </button>
+      </button>
+
         <div className="navbar-links">
-          
           <NavLink to="/" className="home-button">Home</NavLink>
           <NavLink to="/login" className="login-button">Login</NavLink>
           <NavLink to="/register" className="register-button">Register</NavLink>
@@ -36,10 +36,7 @@ const Navbar = () => {
         <li><NavLink to="/shiftList">Shift List</NavLink></li>
         <li><NavLink to="/swapRequest">Swap Request</NavLink></li>
         <li><NavLink to="/employeeList">Employee List</NavLink></li>
-        <li><NavLink to="/timeOffRequests">Time-Off Requests</NavLink></li>
-        {isLoggedIn && isManager && (
-          <li><NavLink to="/managerDashboard">Manager Dashboard</NavLink></li>
-        )}
+        <li><NavLink to="/timeOffRequests">Time-Off Requests</NavLink></li>    
       </ul>
     </nav>
   );

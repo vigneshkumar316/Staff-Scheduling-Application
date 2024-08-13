@@ -2,9 +2,10 @@
   margin-top: 0px;
   padding: 20px;
   background: #f9f9f9;
+  max-height: 9000px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to right, #f5f7fa, #f58484);
+  background: linear-gradient(to right, #e0eafc, #c3cfe2);
 }
 
 .staff-list h2 {

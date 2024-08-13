@@ -7,7 +7,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   max-width: 500px;
   transition: box-shadow 0.3s ease;
-  background: linear-gradient(to right, #f5f7fa, #f58484);
+  background: linear-gradient(to right, #f9f9fa, #f8f9fa);
 }
 
 .form-group {

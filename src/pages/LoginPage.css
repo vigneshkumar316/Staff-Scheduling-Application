@@ -3,29 +3,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
-  min-width: 192vh;
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* Gradient background */
-  
+  min-height: 89vh;
+  min-width: 100vw;
+  animation: gradientAnimation 15s ease infinite;
+  background: linear-gradient(to right, #e0eafc, #c3cfe2)
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .login-box {
-  background: #eeecec; /* White background for the form */
-  max-width: 400px;
+  background: #ffffff; /* Solid white background for the form */
+  max-width: 450px;
   width: 100%;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid #303133; /* Added border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .login-box:hover {
   transform: translateY(-10px); /* Slight lift on hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .login-box h2 {
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 20px;
   color: #333;
   text-align: center;
